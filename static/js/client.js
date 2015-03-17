@@ -1342,6 +1342,7 @@ var app = {}, browserSettings = {}, browserStorage = $.localStorage;
                 if (cal && showRawBGs()) {
                     temp1 = d[0].map(function (entry) {
                         var rawBg = rawIsigToRawBg(entry, cal);
+                        function getRawBG() {return rawIsigToRawBg(entry, cal);}
                         return { date: new Date(entry.x - 2 * 1000), y: rawBg, sgv: scaleBg(rawBg), color: 'white', type: 'rawbg'}
                     }).filter(function(entry) { return entry.y > 0});
                 }
